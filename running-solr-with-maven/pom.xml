@@ -17,7 +17,7 @@
     </licenses>
     <properties>
         <slf4j.version>1.7.5</slf4j.version>
-        <solr.version>4.3.0</solr.version>
+        <solr.version>4.5.0</solr.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <solr.server.port>8983</solr.server.port>
