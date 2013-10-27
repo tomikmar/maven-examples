@@ -22,6 +22,9 @@
 
         <solr.server.port>8983</solr.server.port>
         <solr.server.stopport>9966</solr.server.stopport>
+
+        <solr.config.schema.xml>${project.basedir}/src/main/config/schema.xml</solr.config.schema.xml>
+        <solr.config.solrconfig.xml>${project.basedir}/src/main/config/solrconfig.xml</solr.config.solrconfig.xml>
     </properties>
     <profiles>
         <profile>
@@ -141,6 +144,8 @@
                                     <directory>${project.basedir}/src/main/config</directory>
                                     <targetPath>${solr.solr.home}/${solr.default.core.directory}/conf</targetPath>
                                     <excludes>
+                                        <exclude>schema.xml</exclude>
+                                        <exclude>solrconfig.xml</exclude>
                                         <exclude>lang</exclude>
                                         <exclude>velocity</exclude>
                                         <exclude>xslt</exclude>
@@ -160,6 +165,14 @@
                                 <resource>
                                     <directory>${project.basedir}/src/main/config/xslt</directory>
                                     <targetPath>${solr.solr.home}/${solr.default.core.directory}/conf/xslt</targetPath>
+                                </resource>
+                                <resource>
+                                    <file>${solr.config.schema.xml}</file>
+                                    <targetPath>${solr.solr.home}/${solr.default.core.directory}/conf</targetPath>
+                                </resource>
+                                <resource>
+                                    <file>${solr.config.solrconfig.xml}</file>
+                                    <targetPath>${solr.solr.home}/${solr.default.core.directory}/conf</targetPath>
                                 </resource>
                             </resources>
                         </configuration>
