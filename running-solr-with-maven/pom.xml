@@ -17,7 +17,7 @@
     </licenses>
     <properties>
         <slf4j.version>1.7.5</slf4j.version>
-        <solr.version>4.3.0</solr.version>
+        <solr.version>4.5.1</solr.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <solr.server.port>8983</solr.server.port>
@@ -61,7 +61,7 @@
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
         </dependency>
-        <!-- Solr 4.3.0 -->
+        <!-- Solr -->
         <dependency>
             <groupId>org.apache.solr</groupId>
             <artifactId>solr</artifactId>
@@ -142,7 +142,7 @@
                                 -->
                                 <resource>
                                     <directory>${project.basedir}/src/main/config</directory>
-                                    <targetPath>${solr.solr.home}/${solr.default.core.directory}/conf</targetPath>
+                                    <targetPath>${solr.solr.home}</targetPath>
                                     <preservePath>true</preservePath>
                                 </resource>
                             </resources>
@@ -173,15 +173,16 @@
                                     <directory>${solr.solr.home}</directory>
                                     <includes>
                                         <include>solr.xml</include>
+                                        <include>*/core.properties</include>
                                     </includes>
                                 </resource>
                                 <!-- Remove the conf directory -->
                                 <resource>
                                     <clean>true</clean>
                                     <cleanEmptyDirectories>true</cleanEmptyDirectories>
-                                    <directory>${solr.solr.home}/${solr.default.core.directory}</directory>
+                                    <directory>${solr.solr.home}</directory>
                                     <includes>
-                                        <include>conf</include>
+                                        <include>*/conf/**</include>
                                     </includes>
                                 </resource>
                             </resources>
