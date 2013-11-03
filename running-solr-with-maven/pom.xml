@@ -22,6 +22,8 @@
 
         <solr.server.port>8983</solr.server.port>
         <solr.server.stopport>9966</solr.server.stopport>
+
+        <solr.config.directory>${project.basedir}/src/main/config</solr.config.directory>
     </properties>
     <profiles>
         <profile>
@@ -141,7 +143,7 @@
                                      Velocity macros and other files (/velocity), XSL style sheets (/xslt)
                                 -->
                                 <resource>
-                                    <directory>${project.basedir}/src/main/config</directory>
+                                    <directory>${solr.config.directory}</directory>
                                     <targetPath>${solr.solr.home}</targetPath>
                                     <preservePath>true</preservePath>
                                 </resource>
